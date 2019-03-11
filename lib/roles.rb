@@ -1,14 +1,5 @@
 module Roles
-  def self.included base
-    base.send :include, InstanceMethods
-    base.extend ClassMethods
-  end
-
-  module InstanceMethods
-    def change_role(role_to_change, new_role)
-      update role: new_role if role == role_to_change
-    end
-  end
+  extend ActiveSupport::Concern
 
   module ClassMethods
     def add_roles roles
@@ -36,7 +27,7 @@ module Roles
     end
 
     def unused_roles
-      roles_list - used_roles
+      used_roles - roles_list
     end
 
     def used_roles
