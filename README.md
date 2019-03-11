@@ -19,7 +19,14 @@ not_with_roles roles - all users with roles excluded from array of symbols,
 change_roles(roles_to_change, role) - change all roles included in array of symbols to role,  
 roles_exists? roles - return array of symbols with existed roles (on input - array of symbols with roles),  
 unused_roles - return array of symbols with unused roles,  
-used_roles - return array of symbols with used roles
+used_roles - return array of symbols with used roles  
+
+From enums:  
+user.role? - does user have this role?  
+user.role! - set role for user  
+user.role - return role of specific user  
+User.role - scopes of users with single role  
+User.roles - returns hash with all roles  
 
 ## Installation
 Add this line to your application's Gemfile:
