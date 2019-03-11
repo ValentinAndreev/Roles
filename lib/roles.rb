@@ -27,7 +27,7 @@ module Roles
     end
 
     def unused_roles
-      used_roles - roles_list
+      roles_list - used_roles
     end
 
     def used_roles
