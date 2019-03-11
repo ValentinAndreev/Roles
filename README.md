@@ -1,24 +1,27 @@
 # Roles
-Short description and motivation.
+Simplest roles gem, based on enums.
 
 ## Usage
-How to use my plugin.
+Use generator:
+rails g roles:install (default for User model, or rails g roles:install --model Person - for Person model)
+
+Add to model:
+include Roles
+add_roles [:user, :admin]
+first (user) will be default role
+
+List of aviable methods:
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'roles'
+gem 'roles', git: 'git://github.com/ValentinAndreev/Roles.git'
 ```
 
 And then execute:
 ```bash
 $ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install roles
 ```
 
 ## Contributing
