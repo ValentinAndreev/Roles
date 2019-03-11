@@ -31,7 +31,7 @@ module Roles
     end
 
     def used_roles
-      pluck(:role).uniq
+      pluck(:role).uniq.map(&:to_sym)
     end
   end
 end
