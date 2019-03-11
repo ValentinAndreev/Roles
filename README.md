@@ -5,15 +5,21 @@ Simplest roles gem, based on enums.
 Use generator:  
 rails g roles:install (default for User model, or rails g roles:install --model Person - for Person model)  
 
+Example:  
+  
 Add to model:  
 include Roles  
 add_roles [:user, :admin]  
 first (user) will be default role  
 
-List of aviable methods:  
-has_role? role, change_role(role_to_change, role)  
-Class methods:  
-roles_list, with_roles roles, not_with_roles roles, change_roles(roles_to_change, role), roles_exists? roles, unused_roles, used_roles
+List of aviable class methods:  
+roles_list - list of all roles (return array of symbols),  
+with_roles roles - all users with roles included in array of symbols,  
+not_with_roles roles - all users with roles excluded from array of symbols,  
+change_roles(roles_to_change, role) - change all roles included in array of symbols to role,  
+roles_exists? roles - return array of symbols with existed roles (on input - array of symbols with roles),  
+unused_roles - return array of symbols with unused roles,  
+used_roles - return array of symbols with used roles
 
 ## Installation
 Add this line to your application's Gemfile:
