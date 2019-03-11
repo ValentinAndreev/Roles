@@ -19,6 +19,14 @@ module Roles
       options[:model] ? options[:model].classify : 'User'
     end
 
+    def migration_class_name
+      if Rails::VERSION::MAJOR >= 5
+        "ActiveRecord::Migration[#{Rails::VERSION::MAJOR}.#{Rails::VERSION::MINOR}]"
+      else
+        'ActiveRecord::Migration'
+      end
+    end
+
     def self.next_migration_number(dirname)
       if ActiveRecord::Base.timestamped_migrations
         sleep 1 # make sure each time we get a different timestamp

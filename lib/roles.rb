@@ -11,11 +11,14 @@ module Roles
 
     def change_role(role_to_change, role)
     end
+
+    def role_name role
+    end
   end
 
   module ClassMethods
     def add_roles roles
-      enum roles: roles
+      enum role: roles
     end
 
     def roles_list
